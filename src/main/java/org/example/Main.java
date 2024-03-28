@@ -15,12 +15,14 @@ public class Main {
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Car.class)
                 .buildSessionFactory();
-        Session session = factory.getCurrentSession();
-
-        session.beginTransaction();
-        session.save(car2);
-        session.getTransaction().commit();
-        factory.close();
+        try {
+            Session session = factory.getCurrentSession();
+            session.beginTransaction();
+            session.save(car2);
+            session.getTransaction().commit();
+        } finally {
+            factory.close();
+        }
 
     }
 }
