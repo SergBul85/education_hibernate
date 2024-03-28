@@ -9,7 +9,7 @@ import org.hibernate.cfg.Configuration;
 public class Main {
     public static void main(String[] args) {
 //        Car car1 = new Car("Mercedes", 2023, "Red", 150_000, 240.0);
-        Car car2 = new Car("BMW", 2020, "White", 175_000, 125.0);
+        Car car2 = new Car("MAZDA", 2024, "Green", 85_000, 195.0);
 
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
