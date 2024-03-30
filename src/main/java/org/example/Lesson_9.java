@@ -5,9 +5,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.util.List;
-
-public class Lesson_7 {
+public class Lesson_9 {
     public static void main(String[] args) {
         SessionFactory factory = new Configuration()
                 .configure("hibernate.cfg.xml")
@@ -17,19 +15,18 @@ public class Lesson_7 {
             Session session = factory.getCurrentSession();
             session.beginTransaction();
 
-//            List<Car> carList = session.createQuery("from Car").getResultList();
-//            List<Car> carList = session.createQuery("from Car where year=2022 and name='AUDI' ").getResultList();
+//            Car car = session.get(Car.class, 6);
+//            car.setName("Honda");
 
-            List<Car> carList = session.createQuery("from Car where speed > 194 ").getResultList();
+//            session.createQuery("update Car set price=55000 where year=2022").executeUpdate();
 
-            for (var car : carList) {
-                System.out.println(car);
-            }
+            session.createQuery("update Car set price=88000 where color='Green' ").executeUpdate();
 
             session.getTransaction().commit();
         } finally {
             factory.close();
         }
+
 
     }
 }
