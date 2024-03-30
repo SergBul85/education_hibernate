@@ -19,7 +19,8 @@ public class Lesson_7 {
 
 //            List<Car> carList = session.createQuery("from Car").getResultList();
 
-            List<Car> carList = session.createQuery("from Car where year=2022").getResultList();
+//            List<Car> carList = session.createQuery("from Car where year=2022 and name='AUDI' ").getResultList();
+            List<Car> carList = session.createQuery("from Car where speed > 194 ").getResultList();
 
             for (var car : carList) {
                 System.out.println(car);
