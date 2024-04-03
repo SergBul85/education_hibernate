@@ -15,8 +15,10 @@ public class Main {
                 .addAnnotatedClass(Car.class)
                 .addAnnotatedClass(Engine.class)
                 .buildSessionFactory();
+        Session session = null;
+
         try {
-            Session session = factory.getCurrentSession();
+            session = factory.getCurrentSession();
             session.beginTransaction();
 
 
@@ -43,12 +45,21 @@ public class Main {
 //            Car car3 = session.get(Car.class, 3);
 //            session.delete(car3);
 
-            Engine engine3 = session.get(Engine.class, 1);
-            session.delete(engine3);
+//            Engine engine3 = session.get(Engine.class, 1);
+//            session.delete(engine3);
 
+//            LESSON 15 ************************************************
 
+            Car car4 = session.get(Car.class, 5);
+            session.delete(car4);
+
+            System.out.println(car4);
             session.getTransaction().commit();
-        } finally {
+        }catch (IllegalArgumentException e){
+            System.out.println(e);
+        }
+        finally {
+            session.close();
             factory.close();
         }
 
