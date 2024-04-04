@@ -14,6 +14,9 @@ public class Engine {
     @Column(name = "volume")
     private int volume;
 
+    @OneToOne(mappedBy = "carEngine", cascade = CascadeType.ALL)
+    private Car car;
+
     public Engine() {
     }
 
@@ -44,6 +47,14 @@ public class Engine {
 
     public void setVolume(int volume) {
         this.volume = volume;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     @Override
