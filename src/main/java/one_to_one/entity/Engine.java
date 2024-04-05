@@ -14,7 +14,10 @@ public class Engine {
     @Column(name = "volume")
     private int volume;
 
-    @OneToOne(mappedBy = "carEngine", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "carEngine", cascade = {
+            CascadeType.PERSIST,
+            CascadeType.REFRESH
+    })
     private Car car;
 
     public Engine() {

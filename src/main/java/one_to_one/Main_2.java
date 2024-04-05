@@ -18,13 +18,23 @@ public class Main_2 {
             session = factory.getCurrentSession();
             session.beginTransaction();
 
-            Car car1 = new Car("AUDI", 1995, "Yellow", 600, 200);
-            Engine engine1 = new Engine(333, 3333);
+//            Car car1 = new Car("AUDI", 1995, "Yellow", 600, 200);
+//            Engine engine1 = new Engine(333, 3333);
+//
+//            car1.setCarEngine(engine1);
+//            engine1.setCar(car1);
+//
+//            session.save(engine1);
 
-            car1.setCarEngine(engine1);
-            engine1.setCar(car1);
+//************************************* Lesson 17 ******************
 
-            session.save(engine1);
+            Engine engine = session.get(Engine.class, 5);
+
+            engine.getCar().setCarEngine(null);
+
+            session.delete(engine);
+
+
 
             session.getTransaction().commit();
         } finally {
