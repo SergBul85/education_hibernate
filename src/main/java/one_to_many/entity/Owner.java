@@ -10,7 +10,7 @@ import java.util.List;
 public class Owner {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "name")
+    @Column(name = "id")
     private int id;
     @Column(name = "name")
     private String name;
@@ -59,7 +59,7 @@ public class Owner {
         this.cars = cars;
     }
 
-    public void addCar(Car car) {
+    public void addCarToOwner(Car car) {
         if (cars == null) {
             cars = new ArrayList<>();
         }

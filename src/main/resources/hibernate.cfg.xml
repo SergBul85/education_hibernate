@@ -18,8 +18,8 @@
 
 <!--        <mapping class="org.example.entity.Car"/>-->
 
-        <mapping class="one_to_one.entity.Car"/>
-        <mapping class="one_to_one.entity.Engine"/>
+<!--        <mapping class="one_to_one.entity.Car"/>-->
+<!--        <mapping class="one_to_one.entity.Engine"/>-->
 
         <mapping class="one_to_many.entity.Car"/>
         <mapping class="one_to_many.entity.Owner"/>
