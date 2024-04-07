@@ -13,6 +13,9 @@ public class Car {
     private String model;
     @Column(name = "speed")
     private double speed;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_owner")
+    private Owner owner;
 
     public Car() {
     }
@@ -45,6 +48,15 @@ public class Car {
     public void setSpeed(double speed) {
         this.speed = speed;
     }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
