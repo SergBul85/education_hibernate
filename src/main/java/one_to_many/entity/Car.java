@@ -45,7 +45,6 @@ public class Car {
     public void setSpeed(double speed) {
         this.speed = speed;
     }
-
     @Override
     public String toString() {
         return "Car{" +
