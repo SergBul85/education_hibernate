@@ -13,7 +13,14 @@ public class Car {
     private String model;
     @Column(name = "speed")
     private double speed;
-    @ManyToOne(cascade = CascadeType.ALL)
+    //    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {
+            CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.PERSIST,
+            CascadeType.REFRESH
+    })
+
     @JoinColumn(name = "id_owner")
     private Owner owner;
 
