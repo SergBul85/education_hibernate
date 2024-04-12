@@ -29,7 +29,6 @@ public class Main {
 
             Owner owner = session.get(Owner.class,8);
             session.delete(owner);
-
             session.getTransaction().commit();
         } finally {
             session.close();
