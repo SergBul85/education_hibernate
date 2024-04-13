@@ -24,8 +24,8 @@
 <!--        <mapping class="one_to_many.entity.Car"/>-->
 <!--        <mapping class="one_to_many.entity.Owner"/>-->
 
-        <mapping class="one_to_many_1.entity.Car"/>
-        <mapping class="one_to_many_1.entity.Owner"/>
+<!--        <mapping class="one_to_many_1.entity.Car"/>-->
+<!--        <mapping class="one_to_many_1.entity.Owner"/>-->
 
 
 
