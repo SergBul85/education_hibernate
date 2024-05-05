@@ -24,8 +24,7 @@ public class Taxi {
     public Taxi() {
     }
 
-    public Taxi(int id, String name) {
-        this.id = id;
+    public Taxi( String name) {
         this.name = name;
     }
 

@@ -28,8 +28,7 @@ public class Passeger {
     public Passeger() {
     }
 
-    public Passeger(int id, String name, int age) {
-        this.id = id;
+    public Passeger(String name, int age) {
         this.name = name;
         this.age = age;
     }
