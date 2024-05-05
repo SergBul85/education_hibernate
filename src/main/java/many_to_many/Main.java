@@ -21,20 +21,30 @@ public class Main {
 //            Taxi taxi1 = new Taxi();
 //            taxi1.setName("Mazda");
 //
-            Passeger passeger1 = new Passeger("Vasia", 32);
-            Passeger passeger2 = new Passeger("Olia", 23);
-            Passeger passeger3 = new Passeger("Kolia", 45);
+//            Passeger passeger1 = new Passeger("Vasia", 32);
+//            Passeger passeger2 = new Passeger("Olia", 23);
+//            Passeger passeger3 = new Passeger("Kolia", 45);
 //            taxi1.addPassegerToTaxi(passeger1);
 //            taxi1.addPassegerToTaxi(passeger2);
 //            taxi1.addPassegerToTaxi(passeger3);
 //            session.save(taxi1);
+//            Taxi taxi2 = new Taxi("BMW");//
+//            taxi2.addPassegerToTaxi(passeger2);
+//            taxi2.addPassegerToTaxi(passeger3);
+//
+//            session.save(taxi2);
 
-            Taxi taxi2 = new Taxi("BMW");
+//****************************************** - LESSON 32 ************************
 
-            taxi2.addPassegerToTaxi(passeger2);
-            taxi2.addPassegerToTaxi(passeger3);
 
-            session.save(taxi2);
+//            Taxi taxi1= session.get(Taxi.class,1);
+//            System.out.println(taxi1);
+//            System.out.println(taxi1.getPassegerList());
+
+            Passeger passeger1 = session.get(Passeger.class,4);
+            System.out.println(passeger1);
+            System.out.println(passeger1.getTaxiList());
+
 
             session.getTransaction().commit();
         } finally {
