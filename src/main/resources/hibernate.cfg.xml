@@ -27,6 +27,10 @@
 <!--        <mapping class="one_to_many_1.entity.Car"/>-->
 <!--        <mapping class="one_to_many_1.entity.Owner"/>-->
 
+        <mapping class="many_to_many.entity.Passeger"/>
+        <mapping class="many_to_many.entity.Taxi"/>
+
+
 
 
     </session-factory>
