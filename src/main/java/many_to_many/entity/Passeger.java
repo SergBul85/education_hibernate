@@ -19,6 +19,10 @@ public class Passeger {
     @Column(name = "age")
     private int age;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "pass_taxi",
+            joinColumns = @JoinColumn(name = "pass_id"),
+            inverseJoinColumns = @JoinColumn(name = "taxi_id"))
     private List<Taxi> taxiList;
 
     public Passeger() {

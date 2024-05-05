@@ -15,6 +15,10 @@ public class Taxi {
     @Column(name = "name")
     private String name;
 
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "pass_taxi",
+            joinColumns = @JoinColumn(name = "taxi_id"),
+            inverseJoinColumns = @JoinColumn(name = "pass_id"))
     private List<Passeger> passegerList;
 
     public Taxi() {
