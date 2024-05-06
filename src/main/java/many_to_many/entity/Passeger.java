@@ -19,7 +19,10 @@ public class Passeger {
     @Column(name = "age")
     private int age;
 
-    @ManyToMany(cascade ={})
+    @ManyToMany(cascade = {CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.PERSIST,
+            CascadeType.REFRESH})
     @JoinTable(name = "pass_taxi",
             joinColumns = @JoinColumn(name = "pass_id"),
             inverseJoinColumns = @JoinColumn(name = "taxi_id"))

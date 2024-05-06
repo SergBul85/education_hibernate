@@ -56,9 +56,42 @@ public class Main {
 //            taxi3.addPassegerToTaxi(passeger4);
 //            session.save(taxi3);
 
-            Passeger passeger3 = session.get(Passeger.class, 3);
-            session.delete(passeger3);
+//            Passeger passeger3 = session.get(Passeger.class, 3);
+//            session.delete(passeger3);
 
+//****************************************** - LESSON 34 ************************
+
+            Taxi taxi1 = new Taxi("Mazda");
+            Taxi taxi2 = new Taxi("FORD");
+            Taxi taxi3 = new Taxi("BMW");
+
+            session.save(taxi1);
+            session.save(taxi2);
+            session.save(taxi3);
+
+            Passeger passeger1 = new Passeger("Vasia", 32);
+            Passeger passeger2 = new Passeger("Olia", 23);
+            Passeger passeger3 = new Passeger("Kolia", 45);
+            Passeger passeger4 = new Passeger("Tania", 45);
+            Passeger passeger5 = new Passeger("SERG", 45);
+
+            session.save(passeger1);
+            session.save(passeger2);
+            session.save(passeger3);
+            session.save(passeger4);
+            session.save(passeger5);
+
+            taxi1.addPassegerToTaxi(passeger1);
+            taxi1.addPassegerToTaxi(passeger2);
+            taxi1.addPassegerToTaxi(passeger3);
+
+            taxi2.addPassegerToTaxi(passeger2);
+            taxi2.addPassegerToTaxi(passeger3);
+            taxi2.addPassegerToTaxi(passeger4);
+
+            taxi3.addPassegerToTaxi(passeger3);
+            taxi3.addPassegerToTaxi(passeger4);
+            taxi3.addPassegerToTaxi(passeger5);
 
             session.getTransaction().commit();
         } finally {

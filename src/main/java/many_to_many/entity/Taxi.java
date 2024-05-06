@@ -15,7 +15,10 @@ public class Taxi {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(cascade = {})
+    @ManyToMany(cascade = {CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.PERSIST,
+            CascadeType.REFRESH})
     @JoinTable(name = "pass_taxi",
             joinColumns = @JoinColumn(name = "taxi_id"),
             inverseJoinColumns = @JoinColumn(name = "pass_id"))
@@ -24,7 +27,7 @@ public class Taxi {
     public Taxi() {
     }
 
-    public Taxi( String name) {
+    public Taxi(String name) {
         this.name = name;
     }
 
