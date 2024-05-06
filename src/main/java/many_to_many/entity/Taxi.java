@@ -15,7 +15,7 @@ public class Taxi {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {})
     @JoinTable(name = "pass_taxi",
             joinColumns = @JoinColumn(name = "taxi_id"),
             inverseJoinColumns = @JoinColumn(name = "pass_id"))

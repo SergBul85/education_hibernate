@@ -41,9 +41,23 @@ public class Main {
 //            System.out.println(taxi1);
 //            System.out.println(taxi1.getPassegerList());
 
-            Passeger passeger1 = session.get(Passeger.class,4);
-            System.out.println(passeger1);
-            System.out.println(passeger1.getTaxiList());
+//            Passeger passeger1 = session.get(Passeger.class,4);
+//            System.out.println(passeger1);
+//            System.out.println(passeger1.getTaxiList());
+
+//****************************************** - LESSON 33 ************************
+
+//            Taxi taxi3 = new Taxi();
+//            taxi3.setName("AUDI");
+//            Passeger passeger3 = session.get(Passeger.class, 3);
+//            Passeger passeger4 = session.get(Passeger.class, 4);
+//
+//            taxi3.addPassegerToTaxi(passeger3);
+//            taxi3.addPassegerToTaxi(passeger4);
+//            session.save(taxi3);
+
+            Passeger passeger3 = session.get(Passeger.class, 3);
+            session.delete(passeger3);
 
 
             session.getTransaction().commit();
